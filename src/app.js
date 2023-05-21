@@ -4,12 +4,15 @@ const db = require('./utils/database')
 const initModels = require('./models/initModels')
 const userRoutes = require('./routes/users.routes')
 const tasksRoutes = require('./routes/tasks.routes')
+const cors = require('cors')
+
 
 
 initModels()
 
 const app = express()
 
+app.use(cors())
 app.use(express.json())
 
 const PORT = process.env.PORT || 8000
